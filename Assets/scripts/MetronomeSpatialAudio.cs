@@ -6,15 +6,15 @@ public class MetronomeSpatialAudio : MonoBehaviour
     private Transform mainCamera;
 
     [Header("Distance Settings")]
-    public float maxDistance = 5f;
-    public float minDistance = 0.5f;
+    public float maxDistance = 100f;
+    public float minDistance = 0.1f;
 
     [Header("Audio Settings")]
     [Range(0f, 1f)]
     public float baseVolume = 1f;
     public float basePitch = 1f;
-    public float maxPitchIncrease = 0.3f;
-    public float volumeDropoff = 3f;
+    public float maxPitchIncrease = 0.15f;
+    public float volumeDropoff = 2f;
 
     private void Start()
     {

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AnimationAudioPlayer : MonoBehaviour
 {
-    public AudioClip[] audioClips; // 包含多个音频片段的数组
+    [SerializeField] private AudioClip defaultClick;
+    //public AudioClip[] audioClips; // 包含多个音频片段的数组
     public float clickpitch = 1.0f;
     private AudioSource audioSource;
     private Animator animator;
@@ -18,11 +19,22 @@ public class AnimationAudioPlayer : MonoBehaviour
         audioSource.pitch = clickpitch;
 
         // 从数组中随机选择一个音频片段
-        if (audioClips.Length > 0)
+        //if (audioClips.Length > 0)
+        //{
+        //    int randomIndex = Random.Range(0, audioClips.Length);
+        //    audioSource.clip = audioClips[randomIndex];
+        //}
+
+        if (defaultClick == null)
         {
-            int randomIndex = Random.Range(0, audioClips.Length);
-            audioSource.clip = audioClips[randomIndex];
+            defaultClick = Resources.Load<AudioClip>("click_0");
         }
+
+        if (defaultClick != null) 
+        {
+            audioSource.clip = defaultClick;
+        }
+            
     }
 
     void Update()

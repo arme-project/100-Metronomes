@@ -148,9 +148,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 615e340e91e6a5d419d0876c70fe11c5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -7324217660844403364}
     - targetCorrespondingSourceObject: {fileID: -6225816318827270275, guid: 615e340e91e6a5d419d0876c70fe11c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3099780042434109181}
@@ -161,29 +158,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6993145404143950043}
   m_SourcePrefab: {fileID: 100100000, guid: 615e340e91e6a5d419d0876c70fe11c5, type: 3}
---- !u!1 &6392724561568557169 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 615e340e91e6a5d419d0876c70fe11c5, type: 3}
-  m_PrefabInstance: {fileID: 6086312323381220640}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &-7324217660844403364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6392724561568557169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96af3ca346b328f46b004306ae8af49e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDistance: 5
-  minDistance: 0.5
-  baseVolume: 1
-  basePitch: 1
-  maxPitchIncrease: 0.3
-  volumeDropoff: 3
 --- !u!1 &9074640843620498013 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6225816318827270275, guid: 615e340e91e6a5d419d0876c70fe11c5, type: 3}
@@ -243,3 +217,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips: []
   clickpitch: 1
+  audioSource: {fileID: 0}

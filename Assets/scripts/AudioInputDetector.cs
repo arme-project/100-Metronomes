@@ -6,7 +6,7 @@ public class AudioInputDetector : MonoBehaviour
     private string microphoneName;
     private bool isInitialized = false;
     private const int FREQUENCY = 44100;
-    private const float DETECTION_THRESHOLD = 0.01f;
+    private const float DETECTION_THRESHOLD = 0.06f;
     private const float MIN_INTERVAL = 0.25f;
     private float lastClapTime = 0f;
     public static AudioInputDetector Instance { get; private set; }
