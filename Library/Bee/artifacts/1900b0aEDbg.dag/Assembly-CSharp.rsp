@@ -437,6 +437,7 @@
 "Assets/scripts/startmenu/GuideSound.cs"
 "Assets/scripts/startmenu/StartMenu.cs"
 "Assets/scripts/startmenu/UserManager.cs"
+"Assets/scripts/SyncCalculator.cs"
 "Assets/scripts/UserAnimation.cs"
 "Assets/scripts/UserPlayer.cs"
 "Assets/scripts/UserTimeManager.cs"

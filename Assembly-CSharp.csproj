@@ -80,6 +80,7 @@
     <Compile Include="Assets\scripts\MetronomeSpatialAudio.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\scripts\PuaseMenu.cs" />
+    <Compile Include="Assets\scripts\SyncCalculator.cs" />
     <Compile Include="Assets\scripts\UserAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
