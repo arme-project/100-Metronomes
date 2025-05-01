@@ -51,7 +51,7 @@ public class MetronomeSpatialAudio : MonoBehaviour
         // Set the volume directly
         audioSource.volume = baseVolume;
 
-        Debug.Log($"[{gameObject.name}] Audio Source Configured - Volume: {audioSource.volume}");
+        //Debug.Log($"[{gameObject.name}] Audio Source Configured - Volume: {audioSource.volume}");
     }
 
     private void Update()
@@ -75,10 +75,10 @@ public class MetronomeSpatialAudio : MonoBehaviour
         float stereoPosition = Mathf.Clamp(localDirection.x / maxDistance, -1f, 1f);
         audioSource.panStereo = -stereoPosition * (1 - normalizedDistance);
 
-        if (Time.frameCount % 60 == 0)
-        {
-            Debug.Log($"[{gameObject.name}] Distance: {distance:F2}m, Volume: {audioSource.volume:F2}, " +
-                     $"Pitch: {audioSource.pitch:F2}, Pan: {audioSource.panStereo:F2}");
-        }
+        //if (Time.frameCount % 60 == 0)
+        //{
+        //    Debug.Log($"[{gameObject.name}] Distance: {distance:F2}m, Volume: {audioSource.volume:F2}, " +
+        //             $"Pitch: {audioSource.pitch:F2}, Pan: {audioSource.panStereo:F2}");
+        //}
     }
 }

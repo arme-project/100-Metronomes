@@ -126,6 +126,7 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER
+-define:UNITY_POST_PROCESSING_STACK_V2
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"D:/6000.0.24f1/Editor/Data/Managed/UnityEngine/UnityEditor.AccessibilityModule.dll"
@@ -387,6 +388,8 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Multiplayer.Center.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.PlasticSCM.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Postprocessing.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Postprocessing.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Rendering.LightTransport.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Rendering.LightTransport.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.RenderPipelines.Core.Editor.ref.dll"
@@ -425,6 +428,7 @@
 "Assets/scripts/AutoPlayer.cs"
 "Assets/scripts/EnsembleModel.cs"
 "Assets/scripts/InputChecker.cs"
+"Assets/scripts/MetronomeLightController.cs"
 "Assets/scripts/MetronomeSpatialAudio.cs"
 "Assets/scripts/Player.cs"
 "Assets/scripts/PuaseMenu.cs"
@@ -438,6 +442,7 @@
 "Assets/scripts/startmenu/StartMenu.cs"
 "Assets/scripts/startmenu/UserManager.cs"
 "Assets/scripts/SyncCalculator.cs"
+"Assets/scripts/SyncCalculatorIndividual.cs"
 "Assets/scripts/UserAnimation.cs"
 "Assets/scripts/UserPlayer.cs"
 "Assets/scripts/UserTimeManager.cs"

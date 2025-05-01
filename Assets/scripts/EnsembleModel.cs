@@ -109,7 +109,7 @@ public class EnsembleModel : MonoBehaviour
             PlayerPrefs.SetInt("scoreCounter", scoreCounter);
             PlayerPrefs.Save();
 #if UNITY_EDITOR
-            // 更新 ScoreUIController 中的分数显示
+            //  ScoreUIController 
             //Debug.Log("scorecount" + scoreCounter);          
 #endif
         }
@@ -128,7 +128,7 @@ public class EnsembleModel : MonoBehaviour
         players.Clear();
         alphaParams.Clear();
         betaParams.Clear();
-        UserPlayer userPlayer = FindObjectOfType<UserPlayer>();
+        UserPlayer userPlayer = FindAnyObjectByType<UserPlayer>();
         if (userPlayer != null)
             userPlayer.Clearuserlist();
         scoreCounter = 0;
@@ -136,8 +136,8 @@ public class EnsembleModel : MonoBehaviour
 
     public void InitalParam()
     {
-        float alpha_user = PlayerPrefs.GetFloat("alphaUser", 0.05f);
-        float alpha_auto = PlayerPrefs.GetFloat("alphaAuto", 0.007f);
+        float alpha_user = PlayerPrefs.GetFloat("alphaUser", 0.005f);
+        float alpha_auto = PlayerPrefs.GetFloat("alphaAuto", 0.0001f);
         // Initialize alphaParams and betaParams lists
         for (int i = 0; i < players.Count; i++)
         {

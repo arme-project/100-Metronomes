@@ -41,7 +41,7 @@ public class GuideManager : MonoBehaviour
             emptyObject.SetActive(false);
         }
 
-        // 根据 visual 和 audio 的值激活对应的对象
+        
         if (visual == 1 && visualPrefab != null)
         {
             visualPrefab.SetActive(true);

@@ -41,10 +41,10 @@ public class ScoreUI : MonoBehaviour
     {
         scoreCounter = newScore;
         UpdateScoreText(scoreCounter);
-        if (scoreCounter > 7)
-        {
-            FinishText.enabled = true;
-        }
+        //if (scoreCounter > 7)
+        //{
+        //    FinishText.enabled = true;
+        //}
     }
 
     private void UpdateScoreText(int Counter)

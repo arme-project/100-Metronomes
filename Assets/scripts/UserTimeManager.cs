@@ -8,7 +8,7 @@ public class UserTimeManager : MonoBehaviour
     // µ¥ÀýÊµÀý
     public static UserTimeManager Instance { get; private set; }
     public Text TimecountText;
-    public Text FollowText;
+    //public Text FollowText;
 
     private int count = 10;
 
@@ -27,10 +27,10 @@ public class UserTimeManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (FollowText != null)
-        {
-            FollowText.enabled = false;
-        }
+        //if (FollowText != null)
+        //{
+        //    FollowText.enabled = true;
+        //}
         UpdateText(count);
     }
 
@@ -76,10 +76,10 @@ public class UserTimeManager : MonoBehaviour
     {
         int count = 10 - Timestamps.Count;
         TimecountText.text = count.ToString();
-        if (Timestamps.Count > 4 && FollowText != null)
-        {
-            FollowText.enabled = true;
-        }
+        //if (Timestamps.Count > 4 && FollowText != null)
+        //{
+        //    FollowText.enabled = true;
+        //}
         if (Timestamps.Count > 9 && TimecountText != null)
         {
             TimecountText.enabled = false;
@@ -110,7 +110,7 @@ public class UserTimeManager : MonoBehaviour
     {
 
         Timestamps.Clear();
-        FollowText.enabled = false;
+        //FollowText.enabled = false;
         TimecountText.enabled = true;
     }
     private void UpdateText(int Count)
