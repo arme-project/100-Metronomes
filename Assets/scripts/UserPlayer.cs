@@ -8,16 +8,27 @@ public class UserPlayer : Player
     private List<float> meanOnsetList = new List<float>();
     private List<float> meanIntervalList = new List<float>();
 
+    private bool clapDetected = false;
+
     protected override void Start()
     {
+        AudioInputDetector2.Instance.clapDetectedEvent += clapDetectedEventSubscribe;
         base.Start(); // 调用基类的 Start 方法
         notePlayed = false;
     }
 
+    public void clapDetectedEventSubscribe(float time)
+    {
+        clapDetected = true;
+    }
+
     void Update()
     {
-        if (InputChecker.IsTouchBegan())
+        //if (InputChecker.IsTouchBegan())
+        if (clapDetected)
         {
+            clapDetected = false;
+            Debug.LogWarning("UserPlayer: Input detected, playing note.");
             float currentTime = Time.time;
             AddTimestamp(currentTime);
             if (latestOnsetTimes.Count > 1)

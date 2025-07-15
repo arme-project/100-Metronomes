@@ -12,8 +12,10 @@ public class UserAnimation : MonoBehaviour
     private float originalDuration = 0.5f; //原始时长（秒）
     private float targetDuration; // 目标播放时长
 
+    private bool clapDetected = false;
     void Start()
     {
+        AudioInputDetector2.Instance.clapDetectedEvent += clapDetectedEventSubscribe;
         animator = GetComponent<Animator>();
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = audioClips;
@@ -24,6 +26,10 @@ public class UserAnimation : MonoBehaviour
         }
     }
 
+    public void clapDetectedEventSubscribe(float time)
+    {
+        clapDetected = true;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -33,8 +39,11 @@ public class UserAnimation : MonoBehaviour
 
     void ChangeAnimationSpeed()
     {
-        if (InputChecker.IsTouchBegan())
+        //if (InputChecker.IsTouchBegan())
+        if (clapDetected)
         {
+            clapDetected = false;
+            Debug.LogWarning("UserAnimation: Input detected, changing animation speed.");
             PlayAudio();
             UserTimeManager.Instance.AddTimestamp(Time.time);
             SetAnimationSpeedsign();

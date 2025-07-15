@@ -9,7 +9,7 @@ public static class InputChecker
             // Check for mouse/touch input OR clap detection
             return (Input.GetMouseButtonDown(0) ||
                    (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ||
-                   (AudioInputDetector.Instance != null && AudioInputDetector.Instance.WasClapped()));
+                   (AudioInputDetector2.Instance != null && AudioInputDetector2.Instance.WasClapped()));
         }
         return false;
     }

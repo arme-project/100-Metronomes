@@ -70,6 +70,7 @@
     <Compile Include="Assets\scripts\AudioInputDetector.cs" />
     <Compile Include="Assets\scripts\InputChecker.cs" />
     <Compile Include="Assets\scripts\UserPlayer.cs" />
+    <Compile Include="Assets\scripts\UnityMainThreadDispatcher.cs" />
     <Compile Include="Assets\scripts\startmenu\StartMenu.cs" />
     <Compile Include="Assets\scripts\Settings\Setting.cs" />
     <Compile Include="Assets\scripts\RandomAnimation.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\scripts\startmenu\Activate.cs" />
     <Compile Include="Assets\scripts\startmenu\GuideManager.cs" />
     <Compile Include="Assets\scripts\ScoreUI.cs" />
+    <Compile Include="Assets\scripts\AudioInputDetector2.cs" />
     <Compile Include="Assets\scripts\MetronomeSpatialAudio.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\scripts\PuaseMenu.cs" />
