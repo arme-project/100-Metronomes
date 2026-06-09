@@ -11,6 +11,9 @@ public class Activate : MonoBehaviour
     private float defaultBpm = 120f;
     private float bpm;
 
+    [Tooltip("Multiplier on the guide tick speed. <1 ticks slightly slower, >1 faster. Keep in sync with AudioOnly.guideSpeedMultiplier.")]
+    public float guideSpeedMultiplier = 0.95f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,7 @@ public class Activate : MonoBehaviour
             return;
         }
 
-        // 初始化时读取 BPM 值
+        // 锟斤拷始锟斤拷时锟斤拷取 BPM 值
         bpm = PlayerPrefs.GetFloat("BPM", defaultBpm);
         UpdateAnimationSpeed();
     }
@@ -32,7 +35,7 @@ public class Activate : MonoBehaviour
     {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
-        // 实时读取 BPM 值并更新动画速度
+        // 实时锟斤拷取 BPM 值锟斤拷锟斤拷锟铰讹拷锟斤拷锟劫讹拷
         float newBpm = PlayerPrefs.GetFloat("BPM", defaultBpm);
         if (newBpm != bpm)
         {
@@ -50,7 +53,7 @@ public class Activate : MonoBehaviour
     }
     void UpdateAnimationSpeed()
     {
-        float animationSpeed = bpm / defaultBpm;
+        float animationSpeed = (bpm / defaultBpm) * guideSpeedMultiplier;
         animator.speed = animationSpeed;
     }
 

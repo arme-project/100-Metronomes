@@ -7,6 +7,9 @@ public class AutoPlayer : Player
     public float minSpeed = 0.25f;
     public float maxSpeed = 1.25f;
 
+    [Tooltip("Multiplier on the phase-correction coupling. >1 makes the metronomes synchronise more quickly, 1 = original behaviour.")]
+    public float syncStrength = 1.5f;
+
     public bool IsReversed = false;
     private List<float> animationSpeeds = new List<float>(); 
     protected override void Start()
@@ -69,7 +72,7 @@ public class AutoPlayer : Player
         float hNoise = GenerateHNoise();
 
         
-        onsetInterval = originalAnimationDuration - alphaSum + 0.01f*hNoise;
+        onsetInterval = originalAnimationDuration - (alphaSum * syncStrength) + 0.01f*hNoise;
 
         
         if (onsetInterval > 0.1)

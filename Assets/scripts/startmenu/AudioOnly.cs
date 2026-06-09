@@ -11,6 +11,9 @@ public class AudioOnly : MonoBehaviour
     private float bpm;
     private bool isInvokingPlayAudio = false;
 
+    [Tooltip("Multiplier on the guide tick speed. <1 ticks slightly slower, >1 faster. Keep in sync with Activate.guideSpeedMultiplier.")]
+    public float guideSpeedMultiplier = 0.95f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,21 +55,22 @@ public class AudioOnly : MonoBehaviour
     {
         bpm = PlayerPrefs.GetFloat("BPM", defaultBpm);
         float Speed =  defaultBpm / bpm;
-        return Speed * 0.5f;
+        // Divide by the multiplier so a value < 1 lengthens the interval (slower ticks).
+        return (Speed * 0.5f) / guideSpeedMultiplier;
     }
     void OnSceneLoadednone(Scene scene, LoadSceneMode mode)
     {
-        // ¼ì²é³¡¾°Ãû³ÆÊÇ·ñÎª "Ensemble"
+        // ï¿½ï¿½é³¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îª "Ensemble"
         if (scene.name == "Ensemble")
         {
-            // Í£Ö¹ÖØ¸´µ÷ÓÃ PlayAudioClip
+            // Í£Ö¹ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ PlayAudioClip
             CancelInvoke("PlayAudioClip");
             isInvokingPlayAudio = false;
         }
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // ¼ì²é³¡¾°Ãû³ÆÊÇ·ñÎª "Ensemble"
+        // ï¿½ï¿½é³¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îª "Ensemble"
         if (scene.name == "StartMenu")
         {
             float WaitTime = Updateinterval();
